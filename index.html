@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+<script>
+    let enArray = [
+        "one",
+        "two",
+        "three",
+        "four",
+        "five",
+        "six",
+        "seven",
+        "eight",
+        "nine",
+        "ten",
+    ];
+    let vnArray = [
+        "một",
+        "hai",
+        "ba",
+        "bốn",
+        "năm",
+        "sáu",
+        "bảy",
+        "tám",
+        "chín",
+        "mười",
+    ]
+
+    function search() {
+        let inputWord = prompt("Enter a word to search:").toString();
+        let index = -1;
+        for (let i = 0; i < enArray.length; i++) {
+            if (inputWord === enArray[i]) {
+                index = i;
+                break;
+            }
+        }
+        if (index !== -1) {
+            if (confirm('The word "' + inputWord + '" means "' + vnArray[index] + '" in Vietnamese! \r\n Do you wanna try again?')) {
+                search();
+            }
+        } else {
+            if (confirm("The word is not found!  \r\n Do you wanna try again? ")) {
+                search();
+            }
+        }
+    }
+
+    search();
+
+</script>
+</body>
+</html>
